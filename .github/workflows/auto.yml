@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: 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
 
       - name: Setup Node
         uses: actions/setup-node@v4
