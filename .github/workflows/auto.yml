@@ -24,10 +24,9 @@ jobs:
       - name: Run scraper
         run: node index.js
 
-      - name: Commit files
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "Auto update playlist" || echo "No changes"
-          git push --force
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Auto update playlist'
+          push: true
+          pull: '--rebase --autostash'
